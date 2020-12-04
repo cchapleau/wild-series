@@ -1,18 +1,16 @@
 {% extends "base.html.twig" %}
 
-{% block title %}All categories{{ parent()}}{% endblock %}
+{% block title %}Catégories{{ parent()}}{% endblock %}
 
 {% block header %}
     {% include '_navbar.html.twig' %}
 {% endblock %}
 
 {% block body %}
-    <h1>Toutes les séries de la table catégorie : </h1>
+    <h1>Toutes les catégories : </h1>
         {% for category in categories %}
-                <h4><a href="{{ path('category_show', {'categoryName': category.name})}}">{{ category.name }}</a></h4>
+            <h2><a href="{{ path('category_show', {'categoryName': category.name})}}">{{ category.name }}</a></h2>
         {% endfor %}
 
-    <a href="{{ path('app_index') }}">
-        Retour à l'accueil
-    </a>
+    <a href="{{ path('app_index') }}">Retour à l'accueil</a>
 {% endblock %}
