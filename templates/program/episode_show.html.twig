@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ program.title }} - Saison {{ season.number }} - Épisode {{ episode.number }}{{ parent()}}{% endblock %}
+
+{% block header %}
+    {% include '_navbar.html.twig' %}
+{% endblock %}
+
+{% block body %}
+
+<div class="media">
+    <div>
+        <h1>{{ program.title }}</h1> <br>
+        <h2>Saison : {{ season.number }}</h2> <br>
+        <h3>Episode : {{ episode.number }}</h3> <br>
+        <h4>Titre : {{ episode.title }}</h4> <br>
+        Synopsis : <p>{{ episode.synopsis }}</p> <br>
+    </div>
+</div>
+<br>
+<a href="{{ path('program_index') }}">Retour à la liste des programmes</a>
+
+{% endblock %}
