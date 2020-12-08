@@ -10,10 +10,11 @@
 
 <div class="media">
     <div>
+        <h1>{{ program.title }}</h1>
+        <h2>Saison {{ season.number }}</h2>
         {% for episode in episodes %} <br>
-            Episode : {{ episode.number }} <br>
-            Titre : {{ episode.title }} <br>
-            Synopsis : {{ episode.synopsis }} <br>
+            <h3><a href="{{ path('program_episode_show', {episodeId: episode.id, seasonId: season.id, programId : program.id}) }}">Épisode {{ episode.number }}</a></h3>
+
         {% endfor %}
     </div>
 </div>
