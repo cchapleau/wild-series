@@ -1,8 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Catégorie {{ categoryName }}{{ parent()}}{% endblock %}
+{% block title %} Catégorie {{ category.name }}{{ parent()}}{% endblock %}
+
+{% block header %}
+        {% include '_navbar.html.twig' %}
+{% endblock %}
+
 {% block body %}
-        <h1>Toutes les séries de la catégorie {{ categoryName }} : </h1>
+        <h1>Toutes les séries de la catégorie {{ category.name }} : </h1>
         {% for program in programs %}
                 <h3>{{ program.id }} / <a href="{{ path("program_show", { id: program.id }) }}">{{ program.title }}</a></h3>
                 <p>{{ program.summary }}</p>
@@ -10,4 +15,5 @@
         {% else %}
                 Aucune série trouvée.
         {% endfor %}
+        <a href="{{ path('app_index') }}">Retour à l'accueil</a>
 {% endblock %}

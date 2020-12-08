@@ -37,18 +37,16 @@ class CategoryController extends AbstractController
     /**
      * @Route("/{categoryName}", requirements={"id"="\d+"}, methods={"GET"}, name="show")
      */
-    public function show(string $categoryName): Response
+    public function show(string $categoryName):Response
     {
         if (!$categoryName) {
             throw $this
-                ->createNotFoundException(
-                    'No '.$categoryName.' has been sent to find a category in category\'s table.'
-                );
+                ->createNotFoundException('No '.$categoryName.' has been sent to find a category in category\'s table.');
         }
 
         $category = $this->getDoctrine()
         ->getRepository(Category::class)
-        ->findBy(['name' => $categoryName]);
+        ->findOneBy(['name' => $categoryName]);
 
         $programs = $this->getDoctrine()
             ->getRepository(Program::class)
@@ -59,7 +57,7 @@ class CategoryController extends AbstractController
             );
 
         return $this->render('category/show.html.twig', [
-            'categoryName' => $categoryName,
+            'category' => $category,
             'programs' => $programs]);
     }
 }
