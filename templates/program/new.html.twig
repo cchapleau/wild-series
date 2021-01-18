@@ -1,12 +1,12 @@
-{# templates/category/new.html.twig #}
+{# templates/program/new.html.twig #}
 
 {% extends "base.html.twig" %}
 
-{% block title %} Nouvelle catégorie{{ parent()}}{% endblock %}
+{% block title %} Nouvelle série{{ parent()}}{% endblock %}
 
 {% block body %}
     {{ form_start(form) }}
     {{ form_widget(form) }}
-    <input type='submit' value='Add category'>
+    <input type='submit' value='Add program'>
     {{ form_end(form) }}
 {% endblock %}
