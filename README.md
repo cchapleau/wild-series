@@ -9,3 +9,7 @@ https://www.loom.com/share/0dc8c957e67340268788bf91821854d4
 11 - Symfony : Gardez la “form” !
 Video link :
 https://www.loom.com/share/a0899f2e8a734a999ade4a78baf48019
+
+13 - Symfony : Validation
+Video link :
+https://www.loom.com/share/8a814ece985449dcaf95cfed27dc02ef
